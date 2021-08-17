@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.example.domain.Team;
 
 /**
- * teamsテーブルの情報を操作するリポジトリ
+ * teamsテーブルの情報を操作するリポジトリ.
  * 
  * @author hayato.saishu
  *
@@ -33,7 +33,7 @@ public class TeamRepository {
 	};
 	
 	@Autowired
-	NamedParameterJdbcTemplate template;
+	private NamedParameterJdbcTemplate template;
 	
 	/**
 	 * チーム情報を発足日(昇順)で取得します.
@@ -48,6 +48,11 @@ public class TeamRepository {
 		return teamList;
 	}
 	
+	/**
+	 * チーム情報を1件取得する.
+	 * @param id ID
+	 * @return チーム情報
+	 */
 	public Team load(Integer id) {
 		String sql = "SELECT id, league_name, team_name, headquarters, inauguration, history FROM teams WHERE id=:id;";
 		

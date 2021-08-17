@@ -34,7 +34,7 @@ public class TeamService {
 	/**
 	 * チーム情報を1件取得する.
 	 * 
-	 * @param ID
+	 * @param id ID
 	 * @return Team チーム情報
 	 */
 	public Team showDetail(Integer id) {
